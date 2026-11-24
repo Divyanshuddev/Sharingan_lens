@@ -1,71 +1,134 @@
-# Sharingan Lens - Visual Search & OCR (For Every Browser)
+<div align="center">
 
-A high-performance WebExtension bringing **Sharingan Lens visual powers** (interactive screen area selection, direct text copying to clipboard, instant image copying, and video frame capture) to **Brave, Google Chrome, Mozilla Firefox, Microsoft Edge, Opera, Vivaldi, Arc, and Apple Safari** — styled in an authentic **Crimson Red and Obsidian Black** aesthetic and powered by your **browser's default search engine** in a new tab.
+# 👁️ Sharingan Lens
+### Visual Search, Screen Snipping & OCR Text Extraction for Every Browser
+
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-crimson.svg?style=for-the-badge&logo=google-chrome&logoColor=white)](https://developer.chrome.com/docs/extensions/mv3/intro/)
+[![Browsers](https://img.shields.io/badge/Browsers-Brave%20%7C%20Firefox%20%7C%20Chrome%20%7C%20Edge%20%7C%20Safari-black.svg?style=for-the-badge&logo=firefox-browser&logoColor=red)](https://github.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-DC1419.svg?style=for-the-badge)](LICENSE)
+[![Zero Telemetry](https://img.shields.io/badge/Privacy-100%25%20Local-success.svg?style=for-the-badge)](https://github.com)
+
+<p align="center">
+  <b>Brings Google Lens-style powers to every browser with your default search engine, instant text copying, and high-res image snipping — all in a sleek crimson-and-black anime theme.</b>
+</p>
+
+[Quick Start](#-how-to-use-in-3-simple-steps) •
+[Installation Guide](#-installation-guide-by-browser) •
+[Buttons Explained](#-the-action-bar-explained) •
+[Shortcuts](#-keyboard-shortcuts)
 
 ---
 
-## 👁️ Sharingan Lens Powers & Features
+</div>
 
-* 🎯 **Sharingan Lens Area Selection:** Drag a box over any part of the screen with glowing crimson red brackets (<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>).
-* 🔍 **Search in New Tab (Browser Default Search Engine):** Seamlessly searches selected text or visual descriptions with your browser's default search engine (Brave Search, DuckDuckGo, Bing, etc.) in a new tab.
-* 📝 **Copy Text (Strictly Copies Text):** Instantly extracts all text inside the selected area and copies it directly to your clipboard — no unwanted search tabs or redirects.
-* 🖼️ **Copy Image (Binary PNG):** Copies the cropped selection directly as a crystal-clear PNG to your system clipboard (`ClipboardItem`) with native sharpness and zero blur.
-* 🎬 **Video Frame Search:** Right-click any HTML5 `<video>` (YouTube, Twitch, X/Twitter, etc.) to capture and analyze the active frame.
-* 🖤 **Red & Black Aesthetic:** Deep obsidian black surfaces with glowing 3-Tomoe Sharingan eye iconography and crimson-red accents (`#DC1419`).
+## 🌟 What is Sharingan Lens?
+
+**Sharingan Lens** is an open-source browser extension. Normally, Google Lens is locked inside Google Chrome and forces you to use Google Search. 
+
+**Sharingan Lens frees you from that lock-in:**
+* 🎯 **Select any area on any website** with a crisp, zero-blur snipping box.
+* 📝 **Copy Text straight to your clipboard** (no annoying tabs opening).
+* 🖼️ **Copy cropped images as PNG** so you can immediately paste (`Ctrl+V`) into Discord, Slack, WhatsApp, or Word.
+* 🔍 **Search using your favorite search engine** (Brave Search, DuckDuckGo, Bing, or Google) in a new tab.
+* 🌐 **Runs on EVERY browser**: Brave, Firefox, Chrome, Edge, Opera, Vivaldi, Arc, and Safari.
 
 ---
 
-## 🚀 Browser Installation Guides
+## 🎮 How to Use in 3 Simple Steps
 
-Pre-built targets and zip archives for every browser are generated in the `dist/` folder:
+```mermaid
+flowchart LR
+    A["1️⃣ Press Hotkey\nAlt + Shift + L"] --> B["2️⃣ Drag Box\nSelect text or image"]
+    B --> C["3️⃣ Pick Action\nCopy Text, Image, or Search!"]
+```
 
-### 1. 🦁 Brave Browser
-1. Navigate to `brave://extensions`
-2. Turn on **Developer mode** (toggle in upper-right corner).
-3. Click **"Load unpacked"** and select:
+```
+   Step 1: Activate                    Step 2: Snip Any Area                 Step 3: Click Action
+ ┌──────────────────────┐             ┌───────────────────────────────┐     ┌───────────────────────────────────────────────┐
+ │ Press Alt+Shift+L   │    ──────>  │ Drag mouse to draw a box      │ ──> │ [🔍 Search (New Tab)]  [📝 Copy Text] [🖼️ Copy]│
+ │ (or click eye icon)  │             │ over any text or photo        │     └───────────────────────────────────────────────┘
+ └──────────────────────┘             └───────────────────────────────┘
+```
+
+---
+
+## 🎛️ The Action Bar Explained
+
+Whenever you drag a box on your screen, this floating action bar appears:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│  [🔍 Search (New Tab)]    [📝 Copy Text]    [🖼️ Copy Image]   [🌐 Lens Visual] │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+| Button | What It Does (In Simple Words) |
+| :--- | :--- |
+| **📝 Copy Text** | **Strictly copies text to your clipboard.** Reads all letters, numbers, and paragraphs inside the box and copies them. Shows a green checkmark and closes. **Never opens any new tab.** |
+| **🖼️ Copy Image** | **Copies the cropped picture to your clipboard.** Press <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste it into chat apps, notes, or documents. Sharp, crystal-clear, zero blur. |
+| **🔍 Search (New Tab)** | **Searches your browser's default search engine.** If you use Brave Search, it searches Brave. If you use DuckDuckGo, it searches DuckDuckGo. Opens cleanly in a new tab. |
+| **🌐 Lens Visual** | **Reverse image search.** Searches the internet to find where the cropped picture came from or find similar photos. |
+
+---
+
+## 🚀 Installation Guide (By Browser)
+
+All pre-built folders and ready-to-use `.zip` packages are located in the [`dist/`](dist/) folder.
+
+### 🦁 1. Brave Browser
+1. In your address bar, go to: `brave://extensions`
+2. Turn **ON** the **Developer mode** switch in the top-right corner:
+   ```
+   [Developer mode  ⚪ -> 🔘]
+   ```
+3. Click the **"Load unpacked"** button in the top-left.
+4. Select the folder:
    ```
    Project/dist/brave
    ```
-4. Or drag and drop `dist/sharingan-lens-brave.zip` into the extensions page.
+   *(Or drag & drop `dist/sharingan-lens-brave.zip` directly onto the page!)*
 
 ---
 
-### 2. 🌐 Google Chrome
-1. Navigate to `chrome://extensions`
-2. Turn on **Developer mode** (top-right).
-3. Click **"Load unpacked"** and select:
+### 🌐 2. Google Chrome
+1. In your address bar, go to: `chrome://extensions`
+2. Turn **ON** **Developer mode** (top-right toggle).
+3. Click **"Load unpacked"**.
+4. Select the folder:
    ```
    Project/dist/chrome
    ```
-4. Or unzip `dist/sharingan-lens-chrome.zip` and load the unpacked folder.
 
 ---
 
-### 3. 🦊 Mozilla Firefox (and Zen / Floorp / LibreWolf)
-1. Navigate to `about:debugging#/runtime/this-firefox`
-2. Click **"Load Temporary Add-on..."**
-3. Select `dist/firefox/manifest.json` (or select `dist/sharingan-lens-firefox.zip`).
-4. To reload after updates, simply click the **"Reload"** button.
+### 🦊 3. Mozilla Firefox *(Also Zen, Floorp, LibreWolf)*
+1. In your address bar, go to: `about:debugging#/runtime/this-firefox`
+2. Click the **"Load Temporary Add-on..."** button.
+3. Select the file:
+   ```
+   Project/dist/firefox/manifest.json
+   ```
+   *(Or choose `dist/sharingan-lens-firefox.zip`)*
+4. That's it! To update later, just click **"Reload"**.
 
 ---
 
-### 4. 🌊 Microsoft Edge
-1. Navigate to `edge://extensions`
-2. Enable **Developer mode** in the left sidebar.
+### 🌊 4. Microsoft Edge
+1. In your address bar, go to: `edge://extensions`
+2. Turn **ON** **Developer mode** in the left sidebar menu.
 3. Click **"Load unpacked"** and select:
    ```
    Project/dist/edge
    ```
-4. Or drag and drop `dist/sharingan-lens-edge.zip`.
 
 ---
 
-### 5. 🔴 Opera / Vivaldi / Arc / Other Chromium Browsers
-1. Open your browser extensions manager:
-   - Opera: `opera://extensions`
-   - Vivaldi: `vivaldi://extensions`
-   - Arc: `arc://extensions`
-2. Turn on **Developer mode**.
+### 🔴 5. Opera / Vivaldi / Arc
+1. Open your browser extension manager:
+   * **Opera:** `opera://extensions`
+   * **Vivaldi:** `vivaldi://extensions`
+   * **Arc:** `arc://extensions`
+2. Enable **Developer mode**.
 3. Click **"Load unpacked"** and select:
    ```
    Project/dist/chromium
@@ -73,13 +136,13 @@ Pre-built targets and zip archives for every browser are generated in the `dist/
 
 ---
 
-### 6. 🧭 Apple Safari (macOS)
-1. The Safari-compatible manifest and assets are located in `dist/safari/` and `dist/sharingan-lens-safari.zip`.
-2. Convert and sign using Apple's built-in tool:
+### 🧭 6. Apple Safari (macOS)
+1. Safari WebExtension files are pre-built in `dist/safari/` and `dist/sharingan-lens-safari.zip`.
+2. Convert with Apple's Xcode extension tool:
    ```bash
-   xcrun safari-web-extension-converter dist/safari --project-location ./safari-app
+   xcrun safari-web-extension-converter dist/safari
    ```
-3. Or in Safari Developer Menu: enable **Allow Unsigned Extensions** and inspect `dist/safari/`.
+3. In Safari: Enable **Develop Menu** -> Check **"Allow Unsigned Extensions"**.
 
 ---
 
@@ -87,23 +150,49 @@ Pre-built targets and zip archives for every browser are generated in the `dist/
 
 | Shortcut | Action |
 | :--- | :--- |
-| <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> | Activate Sharingan Lens Area Selection |
-| <kbd>Enter</kbd> | Confirm selection and search with default engine in new tab |
-| <kbd>Esc</kbd> | Cancel selection overlay |
-| <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> | Capture and search visible screen |
+| <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd> | **Start Snipping:** Open the Sharingan eye selection overlay |
+| <kbd>Enter</kbd> | **Quick Search:** Instantly search whatever you selected in a new tab |
+| <kbd>Esc</kbd> | **Cancel:** Exit snipping mode immediately |
+| <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> | **Full Screen:** Snip and search the entire visible screen |
+
+> *(On macOS, you can use <kbd>Option</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>)*
 
 ---
 
-## 🛠️ Building From Source
+## 🎬 Bonus: Video Frame Capture
 
-To run syntax tests and rebuild all browser packages:
+Want to search an actor, location, or product inside a playing video?
+1. Right-click on any HTML5 video (e.g. on **YouTube**, **Twitch**, **X/Twitter**, **Reddit**).
+2. Click **"Sharingan Lens: Reverse image search"** or **"Extract text from image (OCR)"**.
+3. It captures that exact paused video frame and analyzes it!
+
+---
+
+## 🛠️ Building & Testing From Source
+
+If you are a developer and want to edit or rebuild the extension:
+
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Run syntax and manifest validation tests (40+ automated checks)
 npm test
+
+# 3. Build target packages for every browser into dist/
 npm run build
 ```
 
 ---
 
+## 🛡️ Privacy & Security
+
+* **🔒 100% Local Processing:** When you copy text or image, the cropping and extraction happens completely inside your browser. No data is sent to external servers.
+* **🚫 Zero Ads & Zero Trackers:** No telemetry, no background analytics, no third-party scripts.
+* **📖 Open Source:** Inspect all source code freely.
+
+---
+
 ## 📄 License
 
-MIT License.
+Distributed under the **MIT License**. Free for personal and commercial use.
