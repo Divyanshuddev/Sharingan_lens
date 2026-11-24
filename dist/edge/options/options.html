@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sharingan Lens - Settings</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <svg class="lens-logo" viewBox="0 0 100 100">
+          <defs>
+            <g id="options-tomoe">
+              <circle cx="0" cy="-27" r="5.2" fill="#0D0D0D"/>
+              <path d="M 0.0,-32.2 L -1.66,-31.77 L -3.29,-31.26 L -4.86,-30.67 L -6.38,-30.01 L -7.85,-29.28 L -9.26,-28.49 L -10.61,-27.64 L -11.9,-26.73 L -13.13,-25.78 L -14.3,-24.77 L -15.41,-23.72 L -16.45,-22.64 L -17.43,-21.53 L -18.35,-20.38 L -19.22,-19.22 L -20.06,-18.07 L -20.06,-18.07 L -18.99,-18.99 L -17.85,-19.83 L -16.66,-20.58 L -15.44,-21.25 L -14.18,-21.83 L -12.9,-22.34 L -11.6,-22.77 L -10.29,-23.11 L -8.98,-23.38 L -7.66,-23.57 L -6.34,-23.68 L -5.04,-23.71 L -3.75,-23.67 L -2.47,-23.55 L -1.22,-23.36 L 0.0,-23.1 Z" fill="#0D0D0D"/>
+            </g>
+          </defs>
+          <circle cx="50" cy="50" r="46" fill="#DC1419" stroke="#0D0D0D" stroke-width="4"/>
+          <circle cx="50" cy="50" r="27" fill="none" stroke="#0D0D0D" stroke-width="2" opacity="0.9"/>
+          <circle cx="50" cy="50" r="9.5" fill="#0D0D0D"/>
+          <g transform="translate(50, 50)">
+            <use href="#options-tomoe" />
+            <use href="#options-tomoe" transform="rotate(120)" />
+            <use href="#options-tomoe" transform="rotate(240)" />
+          </g>
+        </svg>
+        <div>
+          <h1>Sharingan Lens Settings</h1>
+          <p class="subtitle">Sharingan Lens • Visual Powers & OCR Text Capture</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="settings-grid">
+      <!-- Search Provider & Behavior -->
+      <section class="card">
+        <h2>Search Engine & Behavior</h2>
+        
+        <div class="setting-item">
+          <div>
+            <label for="search-engine" class="setting-title">Primary Search Engine</label>
+            <p class="setting-desc">Choose which engine performs searches when you select an area or query</p>
+          </div>
+          <select id="search-engine" class="select-input">
+            <option value="browser_default">Browser Default Engine (Brave Search, DuckDuckGo, etc.)</option>
+            <option value="google_lens">Google Lens Visual Search</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <div>
+            <label for="open-mode" class="setting-title">Open Results In</label>
+            <p class="setting-desc">Where search results should appear when initiated</p>
+          </div>
+          <select id="open-mode" class="select-input">
+            <option value="new_tab_foreground">New Tab (Foreground)</option>
+            <option value="new_tab_background">New Tab (Background)</option>
+            <option value="popup_window">Side / Popup Window</option>
+          </select>
+        </div>
+      </section>
+
+      <!-- History & Privacy -->
+      <section class="card">
+        <h2>History & Privacy</h2>
+        <div class="setting-item">
+          <div>
+            <label for="save-history" class="setting-title">Save Search History</label>
+            <p class="setting-desc">Store thumbnails and queries locally on this device</p>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="save-history">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="setting-item">
+          <div>
+            <label for="max-history" class="setting-title">Max History Entries</label>
+            <p class="setting-desc">Number of recent searches to remember</p>
+          </div>
+          <select id="max-history" class="select-input">
+            <option value="10">10 items</option>
+            <option value="25">25 items</option>
+            <option value="50">50 items</option>
+          </select>
+        </div>
+
+        <div class="setting-item">
+          <div>
+            <span class="setting-title">Clear History</span>
+            <p class="setting-desc">Wipe all stored search thumbnails and queries</p>
+          </div>
+          <button id="btn-clear-history" class="btn-danger">Clear All History</button>
+        </div>
+      </section>
+
+      <!-- Keyboard Shortcuts -->
+      <section class="card">
+        <h2>Keyboard Shortcuts</h2>
+        <div class="shortcut-row">
+          <span class="shortcut-label">Select area to search or copy text/image</span>
+          <kbd class="shortcut-key">Alt + Shift + L</kbd>
+        </div>
+        <div class="shortcut-row">
+          <span class="shortcut-label">Capture visible screen</span>
+          <kbd class="shortcut-key">Alt + Shift + K</kbd>
+        </div>
+        <p class="shortcut-note">
+          To change these keybindings:
+          <br>
+          <span class="code-pill">brave://extensions/shortcuts</span> or <span class="code-pill">chrome://extensions/shortcuts</span>
+        </p>
+      </section>
+
+      <!-- About Info -->
+      <section class="card card-info">
+        <h2>About this Extension</h2>
+        <p>
+          This extension combines <strong>Google Lens features</strong> (interactive area snipping, OCR text extraction, image copying, video frame capture) with your <strong>Browser's Default Search Engine</strong> (such as Brave Search, DuckDuckGo, Bing, or Startpage) opening searches in a fresh new tab.
+        </p>
+        <ul class="features-list">
+          <li>🔍 <strong>Default Search Engine:</strong> Never forces Google; respects your browser's configured search provider in a new tab.</li>
+          <li>📝 <strong>Direct Text Copy:</strong> Copies webpage text or extracted OCR text straight to your clipboard.</li>
+          <li>🖼️ <strong>Direct Image Copy:</strong> Copies cropped PNG image screenshots straight to your clipboard.</li>
+          <li>🔒 <strong>Zero Tracking:</strong> No external proxies or tracking servers.</li>
+        </ul>
+      </section>
+    </main>
+
+    <div id="save-toast" class="toast" style="display: none;">Settings saved!</div>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "header": "Origin",
+          "operation": "set",
+          "value": "https://lens.google.com"
+        },
+        {
+          "header": "Referer",
+          "operation": "set",
+          "value": "https://lens.google.com/"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "||lens.google.com/",
+      "resourceTypes": [
+        "xmlhttprequest",
+        "main_frame",
+        "sub_frame",
+        "other"
+      ]
+    }
+  }
+]
